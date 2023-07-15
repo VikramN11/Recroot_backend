@@ -10,10 +10,8 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    "origin": "*",
-    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-    "preflightContinue": false,
-    "optionsSuccessStatus": 204
+    "origin": "https://64b10fe935ac18275ab23f1d--subtle-kangaroo-08802a.netlify.app/",
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE"
   }));
 
 app.get("/", (req,res)=>{
