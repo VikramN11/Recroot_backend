@@ -9,7 +9,7 @@ require('dotenv').config();
 const app = express();
 
 app.use(express.json());
-app.use(cors({Origin: "https://subtle-kangaroo-08802a.netlify.app"}));
+app.use(cors({origin: "https://64b10fe935ac18275ab23f1d--subtle-kangaroo-08802a.netlify.app"}));
 
 app.get("/", (req,res)=>{
     res.send("Home Page");
