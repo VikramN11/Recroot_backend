@@ -32,7 +32,7 @@ userRouter.get("/", async (req, res)=>{
 })
 
 
-userRouter.post("/register", upload.single('profileImage'), async (req, res)=>{
+userRouter.post("/register", upload.single('profile'), async (req, res)=>{
     try {
         const {name, email, password, profile} = req.body;
         console.log(req.body);
