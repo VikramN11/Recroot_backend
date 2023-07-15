@@ -22,15 +22,6 @@ const storage = multer.diskStorage({
 // Multer upload 
 const upload = multer({ storage: storage });
 
-userRouter.get("/", async (req, res)=>{
-    try {
-        const users = await UserModel.find();
-        res.send({"user":users})
-    } catch (err) {
-        res.send({"msg":"Something went wrong"})
-    }
-})
-
 
 userRouter.post("/register", upload.single('profile'), async (req, res)=>{
     try {
@@ -78,6 +69,16 @@ userRouter.post("/login", async (req,res)=>{
         res.send({"error" : err.message});
     }
     
+})
+
+
+userRouter.get("/", async (req, res)=>{
+    try {
+        const users = await UserModel.find();
+        res.send({"user":users})
+    } catch (err) {
+        res.send({"msg":"Something went wrong"})
+    }
 })
 
 module.exports = {userRouter}
